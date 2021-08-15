@@ -1,0 +1,11 @@
+name: Dungeons
+version: 0.0.1
+author: Melle "Jubiman" Bosboom
+main: com.jubiman.dungeons.Dungeons
+api-version: 1.17
+website: https://jubiman.com/
+prefix: Dungeons
+commands:
+  dungeons:
+    description: The main command of the plugin
+    usage: For usages use /dungeons help
