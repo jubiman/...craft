@@ -13,19 +13,20 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import java.lang.reflect.InvocationTargetException;
 
 public class UseAbility implements Listener {
-    @EventHandler
-    public void onUseAbility(PlayerInteractEvent e) throws InvocationTargetException, IllegalAccessException {
-        Player p = e.getPlayer();
-        Action a = e.getAction();
-        // Return if action is not a right click
-        if (e.getAction() == Action.PHYSICAL || e.getAction() == Action.LEFT_CLICK_AIR || e.getAction() == Action.LEFT_CLICK_BLOCK || e.getItem() == null) return;
+	@EventHandler
+	public void onUseAbility(PlayerInteractEvent e) throws InvocationTargetException, IllegalAccessException {
+		Player p = e.getPlayer();
+		Action a = e.getAction();
+		// Return if action is not a right click
+		if (e.getAction() == Action.PHYSICAL || e.getAction() == Action.LEFT_CLICK_AIR || e.getAction() == Action.LEFT_CLICK_BLOCK || e.getItem() == null)
+			return;
 
-        net.minecraft.server.v1_8_R3.ItemStack nmsItem = CraftItemStack.asNMSCopy(p.getItemInHand());
-        NBTTagCompound itemCompound = nmsItem.getTag();
-        if (itemCompound != null && itemCompound.hasKey("Ability")) {
-            if (abilities.containsKey(itemCompound.getString("Ability"))) {
-                abilities.run(itemCompound.getString("Ability"), p);
-            }
-        }
-    }
+		net.minecraft.server.v1_8_R3.ItemStack nmsItem = CraftItemStack.asNMSCopy(p.getItemInHand());
+		NBTTagCompound itemCompound = nmsItem.getTag();
+		if (itemCompound != null && itemCompound.hasKey("Ability")) {
+			if (abilities.containsKey(itemCompound.getString("Ability"))) {
+				abilities.run(itemCompound.getString("Ability"), p);
+			}
+		}
+	}
 }
