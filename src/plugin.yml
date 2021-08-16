@@ -1,10 +1,10 @@
-name: Dungeons
+name: ...craft
 version: 0.0.1
 author: Melle "Jubiman" Bosboom
 main: com.jubiman.dungeons.Dungeons
 api-version: 1.17
 website: https://jubiman.com/
-prefix: Dungeons
+prefix: ...craft
 commands:
   dungeons:
     description: The main command of the plugin

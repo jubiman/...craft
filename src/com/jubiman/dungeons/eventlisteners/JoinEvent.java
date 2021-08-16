@@ -1,4 +1,4 @@
-package com.jubiman.dungeons;
+package com.jubiman.dungeons.eventlisteners;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -8,10 +8,10 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 public class JoinEvent implements Listener {
     @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent event){
+    public void onPlayerJoin(PlayerJoinEvent e) {
         {
-            Player p = event.getPlayer();
-            event.setJoinMessage(p.getDisplayName() + ChatColor.YELLOW + " has joined! Stop being cringe lol");
+            Player p = e.getPlayer();
+            e.setJoinMessage(p.getDisplayName() + ChatColor.YELLOW + " has joined! Stop being cringe lol");
         }
     }
 }
